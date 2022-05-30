@@ -1,13 +1,14 @@
 import abc
 
-from backend.src.todo.domain.todo_item import TodoItem
-
+from src.todo.domain.todo_item import TodoItem
 
 
 class CreateTodoCommand:
-    def __init__(self, title, complete=False):
+    def __init__(self, title):
         self.title = title
-        self.complete = complete
+
+    def to_todo_item(self):
+        return TodoItem.create(self.title)
 
 
 class CreateTodoUsecase(metaclass=abc.ABCMeta):
