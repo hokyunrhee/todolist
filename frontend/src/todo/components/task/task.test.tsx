@@ -4,7 +4,7 @@ import { Task } from "./task"
 
 describe("Task", () => {
   it("renders with title and checkbox", () => {
-    const todoItem = { id: "1", title: "go to bed", compelted: false }
+    const todoItem = { id: "1", title: "go to bed", completed: false }
     render(<Task {...todoItem} />)
 
     const title = screen.getByText(todoItem.title)
