@@ -34,3 +34,4 @@ pip install -r requirements.txt
 
 ## Reference
 - [Clean Architecture](https://github.com/wikibook/clean-architecture/pulse)
+- [Port & Adapter Flask](https://github.com/hitallow/crud-flask-ports-and-adapters)
