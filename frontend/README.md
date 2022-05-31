@@ -9,8 +9,8 @@
 ## Assignment 1
 
 - Task 컴포넌트를 구현한다.
-  - [ ] Task의 title과 completed 여부를 나타낸다.
-  - [ ] Mark, Delete를 누를 수 있다.
+  - [x] Task의 title과 completed 여부를 나타낸다.
+  - [x] Mark, Delete를 누를 수 있다.
   - [ ] Double Click시 title을 수정할 수 있다.
   - [ ] Mark된 Task는 title을 수정할 수 없다.
 - Task List 컴포넌트를 구현한다.
