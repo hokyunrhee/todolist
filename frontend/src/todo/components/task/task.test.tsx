@@ -4,9 +4,17 @@ import userEvent from "@testing-library/user-event"
 import { Task } from "./task"
 import { task } from "./__fixtures__/task"
 
+const mockOnCheck = jest.fn()
+const mockOnDelete = jest.fn()
+const setup = () => render(<Task {...task} onCheck={mockOnCheck} onDelete={mockOnDelete} />)
+
 describe("Task", () => {
+  beforeEach(() => {
+    jest.resetAllMocks()
+  })
+
   it("renders with title and checkbox", () => {
-    render(<Task {...task} />)
+    setup()
 
     const title = screen.getByText(task.title)
     const checkbox = screen.getByRole("checkbox")
@@ -16,9 +24,7 @@ describe("Task", () => {
   })
 
   it("clicks checkbox", () => {
-    const mockOnCheck = jest.fn()
-
-    render(<Task {...task} onCheck={mockOnCheck} />)
+    setup()
 
     const checkbox = screen.getByRole("checkbox")
     userEvent.click(checkbox)
@@ -28,9 +34,7 @@ describe("Task", () => {
   })
 
   it("clicks delete button", () => {
-    const mockOnDelete = jest.fn()
-
-    render(<Task {...task} onDelete={mockOnDelete} />)
+    setup()
 
     const deleteButton = screen.getByRole("button")
     userEvent.click(deleteButton)
