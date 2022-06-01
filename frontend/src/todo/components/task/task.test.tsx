@@ -77,4 +77,17 @@ describe("Task", () => {
     expect(mockOnDelete).toBeCalledTimes(1)
     expect(mockOnDelete).toBeCalledWith(task.id)
   })
+
+  it("can't open edit field with completed task", () => {
+    render(
+      <Task {...{ ...task, completed: true }} onCheck={mockOnCheck} onDelete={mockOnDelete} onUpdate={mockOnUpdate} />
+    )
+
+    const title = screen.getByText(task.title)
+
+    userEvent.dblClick(title)
+    const input = screen.queryByRole("textbox")
+
+    expect(input).not.toBeInTheDocument()
+  })
 })
