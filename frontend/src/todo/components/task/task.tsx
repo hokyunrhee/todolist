@@ -12,9 +12,8 @@ interface TaskProps {
 export const Task = ({ id, title, completed, onCheck, onDelete, onUpdate }: TaskProps) => {
   const [isEditing, setIsEditing] = useState(false)
 
-  const handleUpdateTitle = (event: React.FormEvent<HTMLInputElement>) => {
+  const handleUpdateTitle = (event: React.FormEvent<HTMLInputElement>, id: string) => {
     const title = event.currentTarget.value
-    const id = event.currentTarget.getAttribute("data-id") as string
 
     if (title.length === 0) {
       onDelete(id)
@@ -25,28 +24,35 @@ export const Task = ({ id, title, completed, onCheck, onDelete, onUpdate }: Task
     setIsEditing(false)
   }
 
-  const handleBlur: React.FocusEventHandler<HTMLInputElement> = (event) => {
-    handleUpdateTitle(event)
+  const handleBlur = (event: React.FocusEvent<HTMLInputElement>, id: string) => {
+    handleUpdateTitle(event, id)
   }
 
-  const handleKeyDown: React.KeyboardEventHandler<HTMLInputElement> = (event) => {
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>, id: string) => {
     if (event.key === "Enter") {
-      handleUpdateTitle(event)
+      handleUpdateTitle(event, id)
     }
   }
 
-  const handleDoubleClick = () => {
-    setIsEditing(true)
+  const handleDoubleClick = (completed: boolean) => {
+    if (!completed) {
+      setIsEditing(true)
+    }
   }
 
   return isEditing ? (
     <div>
-      <input type="text" defaultValue={title} data-id={id} onBlur={handleBlur} onKeyDown={handleKeyDown} />
+      <input
+        type="text"
+        defaultValue={title}
+        onBlur={(event) => handleBlur(event, id)}
+        onKeyDown={(event) => handleKeyDown(event, id)}
+      />
     </div>
   ) : (
     <div>
       <input type="checkbox" defaultChecked={completed} onClick={() => onCheck(id)} />
-      <label onDoubleClick={handleDoubleClick}>{title}</label>
+      <label onDoubleClick={() => handleDoubleClick(completed)}>{title}</label>
       <button onClick={() => onDelete(id)} />
     </div>
   )
