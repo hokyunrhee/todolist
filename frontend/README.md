@@ -11,7 +11,7 @@
 - Task 컴포넌트를 구현한다.
   - [ ] Task의 title과 completed 여부를 나타낸다.
   - [ ] Mark, Delete를 누를 수 있다.
-  - [ ] Double Click시 title을 수정할 수 있다.
+  - [ ] Double Click시 title을 수정할 수 있다. 만약 title이 비어있게 된다면 Delete 버튼을 누른 것과 같다.
   - [ ] Mark된 Task는 title을 수정할 수 없다.
 - Task List 컴포넌트를 구현한다.
   - [ ] Task 목록을 보여준다.
