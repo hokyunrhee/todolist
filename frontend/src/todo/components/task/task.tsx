@@ -1,13 +1,6 @@
 import React, { useState } from "react"
 
-interface TaskProps {
-  id: string
-  title: string
-  completed: boolean
-  onCheck: (id: string) => void
-  onDelete: (id: string) => void
-  onUpdate: (id: string, title: string) => void
-}
+import { TaskProps } from "@/todo/domain/interface"
 
 export const Task = ({ id, title, completed, onCheck, onDelete, onUpdate }: TaskProps) => {
   const [isEditing, setIsEditing] = useState(false)
