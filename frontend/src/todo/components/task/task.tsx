@@ -41,19 +41,19 @@ export const Task = ({ id, title, completed, onCheck, onDelete, onUpdate }: Task
   }
 
   return isEditing ? (
-    <div>
+    <li>
       <input
         type="text"
         defaultValue={title}
         onBlur={(event) => handleBlur(event, id)}
         onKeyDown={(event) => handleKeyDown(event, id)}
       />
-    </div>
+    </li>
   ) : (
-    <div>
+    <li>
       <input type="checkbox" defaultChecked={completed} onClick={() => onCheck(id)} />
       <label onDoubleClick={() => handleDoubleClick(completed)}>{title}</label>
       <button onClick={() => onDelete(id)} />
-    </div>
+    </li>
   )
 }
