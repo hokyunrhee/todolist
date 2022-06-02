@@ -14,7 +14,7 @@
   - [x] Double Click시 title을 수정할 수 있다. 만약 title이 비어있게 된다면 Delete 버튼을 누른 것과 같다.
   - [x] Mark된 Task는 title을 수정할 수 없다.
 - Task List 컴포넌트를 구현한다.
-  - [ ] Task 목록을 보여준다.
+  - [x] Task 목록을 보여준다.
 - NewTodo 컴포넌트를 구현한다.
   - [ ] 새로운 Task를 추가할 수 있다.
   - [ ] 모든 Task를 Mark하는 버튼을 누를 수 있다.
@@ -24,6 +24,11 @@
   - [ ] completed 상태인 모든 Task를 지우는 버튼을 누를 수 있다.
 - Todo 컴포넌트를 구현한다.
   - [ ] NewTodo, Task List, Footer 컴포넌트를 조합한다.
+
+##
+
+- event naming
+- 왜 이 코드는 의도대로 동작하지 않을까
 
 ## Reference
 
