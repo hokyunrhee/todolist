@@ -1,11 +1,18 @@
-import { Task } from "@/todo/components/task"
-import { TaskListProps } from "@/todo/domain/interface"
+import { TaskItem } from "@/todo/domain/task-item"
+import { TaskRow } from "@/todo/components/task-row"
 
-export const TaskList = ({ tasks, onCheck, onDelete, onUpdate }: TaskListProps) => {
+interface TaskListProps {
+  taskItems: TaskItem[]
+  onCheck: (id: string) => void
+  onDelete: (id: string) => void
+  onUpdate: (id: string, title: string) => void
+}
+
+export const TaskList = ({ taskItems, onCheck, onDelete, onUpdate }: TaskListProps) => {
   return (
     <ul>
-      {tasks.map((task) => (
-        <Task key={task.id} {...task} onCheck={onCheck} onDelete={onDelete} onUpdate={onUpdate} />
+      {taskItems.map((taskItem) => (
+        <TaskRow key={taskItem.id} taskItem={taskItem} onCheck={onCheck} onDelete={onDelete} onUpdate={onUpdate} />
       ))}
     </ul>
   )

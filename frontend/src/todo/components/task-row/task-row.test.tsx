@@ -1,15 +1,18 @@
 import { render, screen } from "@testing-library/react"
 import userEvent from "@testing-library/user-event"
 
-import { Task } from "./task"
+import { TaskRow } from "./task-row"
 import { task } from "./__fixtures__/task"
+import { TaskItem } from "@/todo/domain/task-item"
 
 const mockOnCheck = jest.fn()
 const mockOnDelete = jest.fn()
 const mockOnUpdate = jest.fn()
-const setup = () => render(<Task {...task} onCheck={mockOnCheck} onDelete={mockOnDelete} onUpdate={mockOnUpdate} />)
+const taskItem = new TaskItem(task)
+const setup = () =>
+  render(<TaskRow taskItem={taskItem} onCheck={mockOnCheck} onDelete={mockOnDelete} onUpdate={mockOnUpdate} />)
 
-describe("Task", () => {
+describe("Task Item", () => {
   beforeEach(() => {
     jest.resetAllMocks()
   })
@@ -80,7 +83,12 @@ describe("Task", () => {
 
   it("can't open edit field with completed task", () => {
     render(
-      <Task {...{ ...task, completed: true }} onCheck={mockOnCheck} onDelete={mockOnDelete} onUpdate={mockOnUpdate} />
+      <TaskRow
+        taskItem={new TaskItem({ ...task, completed: true })}
+        onCheck={mockOnCheck}
+        onDelete={mockOnDelete}
+        onUpdate={mockOnUpdate}
+      />
     )
 
     const title = screen.getByText(task.title)

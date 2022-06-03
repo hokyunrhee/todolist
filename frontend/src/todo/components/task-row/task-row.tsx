@@ -1,8 +1,15 @@
 import React, { useState } from "react"
 
-import { TaskProps } from "@/todo/domain/interface"
+import { TaskItem } from "@/todo/domain/task-item"
 
-export const Task = ({ id, title, completed, onCheck, onDelete, onUpdate }: TaskProps) => {
+interface TaskRowProps {
+  taskItem: TaskItem
+  onCheck: (id: string) => void
+  onDelete: (id: string) => void
+  onUpdate: (id: string, title: string) => void
+}
+
+export const TaskRow = ({ taskItem, onCheck, onDelete, onUpdate }: TaskRowProps) => {
   const [isEditing, setIsEditing] = useState(false)
 
   const handleUpdateTitle = (event: React.FormEvent<HTMLInputElement>, id: string) => {
@@ -37,16 +44,16 @@ export const Task = ({ id, title, completed, onCheck, onDelete, onUpdate }: Task
     <li>
       <input
         type="text"
-        defaultValue={title}
-        onBlur={(event) => handleBlur(event, id)}
-        onKeyDown={(event) => handleKeyDown(event, id)}
+        defaultValue={taskItem.title}
+        onBlur={(event) => handleBlur(event, taskItem.id)}
+        onKeyDown={(event) => handleKeyDown(event, taskItem.id)}
       />
     </li>
   ) : (
     <li>
-      <input type="checkbox" defaultChecked={completed} onClick={() => onCheck(id)} />
-      <label onDoubleClick={() => handleDoubleClick(completed)}>{title}</label>
-      <button onClick={() => onDelete(id)} />
+      <input type="checkbox" defaultChecked={taskItem.completed} onClick={() => onCheck(taskItem.id)} />
+      <label onDoubleClick={() => handleDoubleClick(taskItem.completed)}>{taskItem.title}</label>
+      <button onClick={() => onDelete(taskItem.id)} />
     </li>
   )
 }
