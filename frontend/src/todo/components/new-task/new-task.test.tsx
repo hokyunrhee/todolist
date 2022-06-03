@@ -20,6 +20,7 @@ describe("NewTask", () => {
 
     expect(mockHandleAddTask).toHaveBeenCalledTimes(1)
     expect(mockHandleAddTask).toHaveBeenCalledWith(newTitle)
+    expect(textBox).toHaveValue("")
   })
 
   it('clicks "check all" button', () => {
