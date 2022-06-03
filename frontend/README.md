@@ -16,8 +16,8 @@
 - Task List 컴포넌트를 구현한다.
   - [x] Task 목록을 보여준다.
 - NewTodo 컴포넌트를 구현한다.
-  - [ ] 새로운 Task를 추가할 수 있다.
-  - [ ] 모든 Task를 Mark하는 버튼을 누를 수 있다.
+  - [x] 새로운 Task를 추가할 수 있다.
+  - [x] Task가 하나 이상있을 때, 모든 Task를 Mark하는 버튼을 누를 수 있다.
 - Footer 컴포넌트를 구현한다.
   - [ ] all, active, completed 상태의 Task를 필터링하는 버튼을 누를 수 있다.
   - [ ] active 상태의 Task 개수를 보여준다.
