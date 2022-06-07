@@ -5,7 +5,6 @@ import { Footer } from "./footer"
 
 const useRouter = jest.spyOn(require("next/router"), "useRouter")
 const router = { push: jest.fn() }
-useRouter.mockReturnValue(router)
 const mockHandleClearCompleted = jest.fn()
 
 const setup = () => render(<Footer onClearCompleted={mockHandleClearCompleted} taskCount={3} />)
@@ -16,16 +15,18 @@ describe("Footer", () => {
   })
 
   it('clicks "all" button', () => {
+    useRouter.mockReturnValue(router)
     setup()
 
     const button = screen.getByRole("button", { name: /all/i })
     userEvent.click(button)
-
+    expect(useRouter).toHaveBeenCalled()
     expect(router.push).toHaveBeenCalledTimes(1)
-    expect(router.push).toHaveBeenCalledWith("/all")
+    expect(router.push).toHaveBeenCalledWith("/")
   })
 
   it('clicks "active" button', () => {
+    useRouter.mockReturnValue(router)
     setup()
 
     const button = screen.getByRole("button", { name: /active/i })
@@ -36,6 +37,7 @@ describe("Footer", () => {
   })
 
   it('clicks "completed" button', () => {
+    useRouter.mockReturnValue(router)
     setup()
 
     const button = screen.getByRole("button", { name: /^completed$/i })
