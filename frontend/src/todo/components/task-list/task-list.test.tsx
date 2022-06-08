@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react"
 
 import { TaskList } from "./task-list"
-import { tasks } from "./__fixtures__/tasks"
+import { tasks } from "@/todo/__fixtures__/tasks"
 import { TaskItem } from "@/todo/domain/task-item"
 
 const mockOnCheck = jest.fn()

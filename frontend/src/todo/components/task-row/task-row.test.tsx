@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react"
 import userEvent from "@testing-library/user-event"
 
 import { TaskRow } from "./task-row"
-import { task } from "./__fixtures__/task"
+import { task } from "@/todo/__fixtures__/task"
 import { TaskItem } from "@/todo/domain/task-item"
 
 const mockOnCheck = jest.fn()
