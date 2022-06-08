@@ -19,16 +19,11 @@
   - [x] 새로운 Task를 추가할 수 있다.
   - [x] Task가 하나 이상있을 때, 모든 Task를 Mark하는 버튼을 누를 수 있다.
 - Footer 컴포넌트를 구현한다.
-  - [ ] all, active, completed 상태의 Task를 필터링하는 버튼을 누를 수 있다.
-  - [ ] active 상태의 Task 개수를 보여준다.
-  - [ ] completed 상태인 모든 Task를 지우는 버튼을 누를 수 있다.
+  - [x] all, active, completed 상태의 Task를 필터링하는 버튼을 누를 수 있다.
+  - [x] active 상태의 Task 개수를 보여준다.
+  - [X] completed 상태인 모든 Task를 지우는 버튼을 누를 수 있다.
 - Todo 컴포넌트를 구현한다.
   - [ ] NewTodo, Task List, Footer 컴포넌트를 조합한다.
-
-##
-
-- event naming
-- 왜 이 코드는 의도대로 동작하지 않을까
 
 ## Reference
 
