@@ -2,9 +2,10 @@ import { render, screen } from "@testing-library/react"
 import userEvent from "@testing-library/user-event"
 
 import { TaskRow } from "./task-row"
-import { task } from "@/todo/__fixtures__/task"
+import { tasks } from "@/todo/__fixtures__/tasks"
 import { TaskItem } from "@/todo/domain/task-item"
 
+const task = tasks[0]
 const mockOnCheck = jest.fn()
 const mockOnDelete = jest.fn()
 const mockOnUpdate = jest.fn()
