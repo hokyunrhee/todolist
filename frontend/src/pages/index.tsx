@@ -1,5 +1,11 @@
+import { Todo } from "@/todo/components/todo"
+
 const Home = () => {
-  return <div>{/* write your code here */}</div>
+  return (
+    <div>
+      <Todo />
+    </div>
+  )
 }
 
 export default Home
