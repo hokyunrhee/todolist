@@ -13,10 +13,6 @@ const setup = () =>
   render(<TaskList taskItems={taskItems} onCheck={mockOnCheck} onDelete={mockOnDelete} onUpdate={mockOnUpdate} />)
 
 describe("TaskList", () => {
-  beforeEach(() => {
-    jest.resetAllMocks()
-  })
-
   it("renders list of items with provided tasks", () => {
     setup()
 

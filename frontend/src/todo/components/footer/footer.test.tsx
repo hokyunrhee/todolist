@@ -10,10 +10,6 @@ const mockHandleClearCompleted = jest.fn()
 const setup = () => render(<Footer onClearCompleted={mockHandleClearCompleted} taskCount={3} />)
 
 describe("Footer", () => {
-  beforeEach(() => {
-    jest.resetAllMocks()
-  })
-
   it('clicks "all" button', () => {
     useRouter.mockReturnValue(router)
     setup()

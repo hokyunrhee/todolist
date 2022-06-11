@@ -7,10 +7,6 @@ const mockHandleAddTask = jest.fn()
 const mockHandleCheckAllTasks = jest.fn()
 
 describe("NewTask", () => {
-  beforeEach(() => {
-    jest.resetAllMocks()
-  })
-
   it("adds new task with title", () => {
     render(<NewTask onAdd={mockHandleAddTask} onCheckAll={mockHandleCheckAllTasks} isToggleAllShow={false} />)
 

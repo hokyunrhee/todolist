@@ -14,10 +14,6 @@ const setup = () =>
   render(<TaskRow taskItem={taskItem} onCheck={mockOnCheck} onDelete={mockOnDelete} onUpdate={mockOnUpdate} />)
 
 describe("Task Item", () => {
-  beforeEach(() => {
-    jest.resetAllMocks()
-  })
-
   it("renders with title and checkbox", () => {
     setup()
 
