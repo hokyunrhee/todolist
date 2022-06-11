@@ -21,9 +21,9 @@
 - Footer 컴포넌트를 구현한다.
   - [x] all, active, completed 상태의 Task를 필터링하는 버튼을 누를 수 있다.
   - [x] active 상태의 Task 개수를 보여준다.
-  - [X] completed 상태인 모든 Task를 지우는 버튼을 누를 수 있다.
+  - [x] completed 상태인 모든 Task를 지우는 버튼을 누를 수 있다.
 - Todo 컴포넌트를 구현한다.
-  - [ ] NewTodo, Task List, Footer 컴포넌트를 조합한다.
+  - [x] NewTodo, Task List, Footer 컴포넌트를 조합한다.
 
 ## Reference
 
