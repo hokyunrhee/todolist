@@ -5,6 +5,9 @@
 /.pnp
 .pnp.js
 
+# testing
+/public/mockServiceWorker.js
+
 # next.js
 /.next/
 /out/
