@@ -8,14 +8,14 @@
 
 ## Assignment 1
 
-- Task 컴포넌트를 구현한다.
+- TaskRow 컴포넌트를 구현한다.
   - [x] Task의 title과 completed 여부를 나타낸다.
   - [x] Mark, Delete를 누를 수 있다.
   - [x] Double Click시 title을 수정할 수 있다. 만약 title이 비어있게 된다면 Delete 버튼을 누른 것과 같다.
   - [x] Mark된 Task는 title을 수정할 수 없다.
 - Task List 컴포넌트를 구현한다.
   - [x] Task 목록을 보여준다.
-- NewTodo 컴포넌트를 구현한다.
+- NewTask 컴포넌트를 구현한다.
   - [x] 새로운 Task를 추가할 수 있다.
   - [x] Task가 하나 이상있을 때, 모든 Task를 Mark하는 버튼을 누를 수 있다.
 - Footer 컴포넌트를 구현한다.
@@ -23,7 +23,7 @@
   - [x] active 상태의 Task 개수를 보여준다.
   - [x] completed 상태인 모든 Task를 지우는 버튼을 누를 수 있다.
 - Todo 컴포넌트를 구현한다.
-  - [x] NewTodo, Task List, Footer 컴포넌트를 조합한다.
+  - [x] NewTask, Task List, Footer 컴포넌트를 조합한다.
 
 ## Reference
 
