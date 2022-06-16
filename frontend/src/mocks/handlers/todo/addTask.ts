@@ -8,5 +8,5 @@ export const addTask = rest.post<Pick<Task, "title">>("/api/tasks", (req, res, c
   const newTask: Task = { id: `${Date.now()}`, title, completed: false }
   tasks.push(newTask)
 
-  return res(ctx.status(200))
+  return res(ctx.json(newTask))
 })

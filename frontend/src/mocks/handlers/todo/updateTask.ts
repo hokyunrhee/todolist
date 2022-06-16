@@ -16,9 +16,5 @@ export const updateTask = rest.patch<Body>("/api/tasks/:id", (req, res, ctx) => 
     completed: completed ?? tasks[indexOfTargetTask].completed,
   }
 
-  if (tasks[indexOfTargetTask].title.length === 0) {
-    tasks.splice(indexOfTargetTask, 1)
-  }
-
-  return res(ctx.status(200))
+  return res(ctx.json(tasks[indexOfTargetTask]))
 })
