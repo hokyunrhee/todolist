@@ -8,5 +8,5 @@ export const removeTask = rest.delete("/api/tasks/:id", (req, res, ctx) => {
   const indexOfTargetTask = tasks.findIndex((task) => task.id === id)
   tasks.splice(indexOfTargetTask, 1)
 
-  return res(ctx.status(200))
+  return res(ctx.status(204))
 })
