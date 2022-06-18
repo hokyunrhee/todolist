@@ -1,3 +1,3 @@
 import { todoHandlers } from "./todo"
 
-export const handlers = [todoHandlers]
+export const handlers = [...todoHandlers]
