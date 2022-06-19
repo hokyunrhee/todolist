@@ -1,5 +1,8 @@
 import "@testing-library/jest-dom/extend-expect"
 
-beforeEach(() => {
-  jest.resetAllMocks()
-})
+import { server } from "@/mocks/server"
+
+beforeAll(() => server.listen())
+beforeEach(() => jest.resetAllMocks())
+afterEach(() => server.resetHandlers())
+afterAll(() => server.close())
