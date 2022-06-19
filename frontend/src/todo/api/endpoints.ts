@@ -1,3 +1,3 @@
 export const endpoints = {
-  todos: "api/tasks",
+  todos: "/api/tasks",
 }

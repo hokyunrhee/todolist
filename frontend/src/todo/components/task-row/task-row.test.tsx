@@ -31,7 +31,7 @@ describe("Task Item", () => {
     userEvent.click(checkbox)
 
     expect(mockOnCheck).toBeCalledTimes(1)
-    expect(mockOnCheck).toBeCalledWith(task.id)
+    expect(mockOnCheck).toBeCalledWith(task.id, !task.completed)
   })
 
   it("clicks delete button", () => {

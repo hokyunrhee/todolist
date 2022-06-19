@@ -8,7 +8,7 @@ const mockHandleCheckAllTasks = jest.fn()
 
 describe("NewTask", () => {
   it("adds new task with title", () => {
-    render(<NewTask onAdd={mockHandleAddTask} onCheckAll={mockHandleCheckAllTasks} isToggleAllShow={false} />)
+    render(<NewTask onAdd={mockHandleAddTask} onCheckAll={mockHandleCheckAllTasks} />)
 
     const textBox = screen.getByRole("textbox")
     const newTitle = "implement your app"
@@ -20,7 +20,7 @@ describe("NewTask", () => {
   })
 
   it('clicks "check all" button', () => {
-    render(<NewTask onAdd={mockHandleAddTask} onCheckAll={mockHandleCheckAllTasks} isToggleAllShow={true} />)
+    render(<NewTask onAdd={mockHandleAddTask} onCheckAll={mockHandleCheckAllTasks} />)
 
     const button = screen.getByRole("button")
     userEvent.click(button)

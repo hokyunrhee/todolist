@@ -3,7 +3,7 @@ import { TaskRow } from "@/todo/components/task-row"
 
 interface TaskListProps {
   taskItems: TaskItem[]
-  onCheck: (id: string) => void
+  onCheck: (id: string, completed: boolean) => void
   onDelete: (id: string) => void
   onUpdate: (id: string, title: string) => void
 }
