@@ -22,6 +22,7 @@
 ## Backend Course
 
 - [Step 1: Create a new application](./backend/README.md)
+- [Step 2: Create application APIs](./backend/README2.md)
 
 
 ## Frontend Course
