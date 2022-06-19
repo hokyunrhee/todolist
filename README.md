@@ -41,6 +41,7 @@
 ## Frontend Course
 
 - [Step 1: Implement todo list UI](./frontend/README.md)
+- [Step 2: Development with api mocking](./frontend/README.md)
 
 ## License
 
